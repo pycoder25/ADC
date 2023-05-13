@@ -29,8 +29,6 @@ def apend_data():
    
     data.to_csv("data.csv", mode='a', index=False, header=False)
 
-
-
 def delete_data():
     entry.delete(0,END)
     entry2.delete(0,END)
@@ -61,6 +59,7 @@ entry3 = Entry(window, font=("Arial", 18), fg="black", bg="orange")
 button = Button(window, text="New", font=("arial",10,"bold"), fg="white", bg="blue",command=save_data)
 button2 = Button(window, text="Append", font=("arial",10,"bold"), fg="white", bg="blue",command=apend_data)
 button3 = Button(window, text="Delete", font=("arial",10,"bold"), fg="white", bg="blue",command=delete_data)
+
 
 label.grid(row=1, column=0, sticky="w", padx=10, pady=10)
 label2.grid(row=2, column=0, sticky="w", padx=10, pady=10)
