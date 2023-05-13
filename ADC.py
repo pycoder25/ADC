@@ -22,8 +22,8 @@ def apend_data():
     last_name = entry2.get()
     city = entry3.get()
 
-    data = pd.DataFrame({"First Name": [first_name],
-                         "Last Name": [last_name],
+    data = pd.DataFrame({"Firstname": [first_name],
+                         "Lastname": [last_name],
                          "City": [city]})
 
    
