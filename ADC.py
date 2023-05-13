@@ -11,9 +11,9 @@ def save_data():
     last_name = entry2.get()
     city = entry3.get()
 
-    data = pd.DataFrame({"First Name": [first_name],
-                         "Last Name": [last_name],
-                         "City": [city]})
+    data = pd.DataFrame({"F": [first_name],
+                         "L": [last_name],
+                         "C": [city]})
     data.to_csv("data.csv", index=False)
 
 
