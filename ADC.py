@@ -49,7 +49,7 @@ title = Label(window, text="Fill up the empty fields",
               font=("Arial", 25, "bold"),
               fg="blue",
               bg="black")
-title.grid(row=0, column=0, columnspan=2)
+
 
 label = Label(window, text="First name: ", font=("Arial", 18, "bold"), fg="green", bg="black")
 label2 = Label(window,text="Last name: ", font=("Arial",18,"bold"),fg="green", bg="black")
