@@ -22,8 +22,8 @@ def apend_data():
     last_name = entry2.get()
     city = entry3.get()
 
-    data = pd.DataFrame({"First Name": [first_name],
-                         "Last Name": [last_name],
+    data = pd.DataFrame({"Firstname": [first_name],
+                         "Lastname": [last_name],
                          "City": [city]})
 
    
@@ -57,9 +57,9 @@ label3 = Label(window,text="State: ", font=("Arial",18,"bold"), fg="green", bg="
 entry = Entry(window, font=("Arial", 18), fg="black", bg="orange")
 entry2 = Entry(window, font=("Arial", 18), fg="black", bg="orange")
 entry3 = Entry(window, font=("Arial", 18), fg="black", bg="orange")
-button = Button(window, text="New Data", font=("arial",10,"bold"), fg="white", bg="blue",command=save_data)
-button2 = Button(window, text="Append Data", font=("arial",10,"bold"), fg="white", bg="blue",command=apend_data)
-button3 = Button(window, text="Delete Data", font=("arial",10,"bold"), fg="white", bg="blue",command=delete_data)
+button = Button(window, text="New", font=("arial",10,"bold"), fg="white", bg="blue",command=save_data)
+button2 = Button(window, text="Append", font=("arial",10,"bold"), fg="white", bg="blue",command=apend_data)
+button3 = Button(window, text="Delete", font=("arial",10,"bold"), fg="white", bg="blue",command=delete_data)
 
 label.grid(row=1, column=0, sticky="w", padx=10, pady=10)
 label2.grid(row=2, column=0, sticky="w", padx=10, pady=10)
