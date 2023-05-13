@@ -48,8 +48,7 @@ title = Label(window, text="Fill up the empty fields",
               fg="blue",
               bg="black")
 
-#padx=10, pady=10
-#columnspan=1
+
 label = Label(window, text="First name: ", font=("Arial", 18, "bold"), fg="green", bg="black")
 label2 = Label(window,text="Last name: ", font=("Arial",18,"bold"),fg="green", bg="black")
 label3 = Label(window,text="State: ", font=("Arial",18,"bold"), fg="green", bg="black")
@@ -67,9 +66,9 @@ label3.grid(row=3, column=0, sticky="w", padx=10, pady=10)
 entry.grid(row=1, column=1, sticky="w", padx=10, pady=10)
 entry2.grid(row=2, column=1, sticky="w", padx=10, pady=10)
 entry3.grid(row=3, column=1, sticky="w", padx=10, pady=10)
-button.grid(row=4, column=0, sticky=W+E+N+S, padx=2, pady=2)
-button2.grid(row=4, column=1, sticky=W+E+N+S, padx=2, pady=2)
-button3.grid(row=4, column=2, sticky=W+E+N+S, padx=2, pady=2)
+button.grid(row=4, column=1, sticky=W, padx=5, pady=5)
+button2.grid(row=5, column=1, sticky=W, padx=5, pady=5)
+button3.grid(row=6, column=1, sticky=W, padx=5, pady=5)
 title.grid(row=0, column=1)
 entry.bind("<Return>", focus_next_entry)
 entry2.bind("<Return>", focus_next_entry)
