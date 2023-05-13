@@ -29,6 +29,8 @@ def apend_data():
    
     data.to_csv("data.csv", mode='a', index=False, header=False)
 
+
+
 def delete_data():
     entry.delete(0,END)
     entry2.delete(0,END)
