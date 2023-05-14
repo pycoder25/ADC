@@ -1,20 +1,20 @@
+import os
 from tkinter import *
+from tkinter import messagebox
 import pandas as pd
-
-'''The name of this program is Automate Data Collector(ADC)'''
-'Creator: Diego Lopez'
-'Date: 10/05/2023'
-
 
 def save_data():
     first_name = entry.get()
     last_name = entry2.get()
     city = entry3.get()
 
-    data = pd.DataFrame({"First Name": [first_name],
-                         "Last Name": [last_name],
+    data = pd.DataFrame({"Firstname": [first_name],
+                         "Lastname": [last_name],
                          "City": [city]})
     data.to_csv("data.csv", index=False)
+    messagebox.showinfo("The file has been created!")
+
+
 
 
 def apend_data():
@@ -25,9 +25,10 @@ def apend_data():
     data = pd.DataFrame({"Firstname": [first_name],
                          "Lastname": [last_name],
                          "City": [city]})
-
+    messagebox.showinfo("The file has been updated!")
    
     data.to_csv("data.csv", mode='a', index=False, header=False)
+print("The data has been updated!")
 
 def delete_data():
     entry.delete(0,END)
@@ -49,8 +50,8 @@ title = Label(window, text="Fill up the empty fields",
               bg="black")
 
 
-label = Label(window, text="First name: ", font=("Arial", 18, "bold"), fg="green", bg="black")
-label2 = Label(window,text="Last name: ", font=("Arial",18,"bold"),fg="green", bg="black")
+label = Label(window, text="Firstname: ", font=("Arial", 18, "bold"), fg="green", bg="black")
+label2 = Label(window,text="Lastname: ", font=("Arial",18,"bold"),fg="green", bg="black")
 label3 = Label(window,text="State: ", font=("Arial",18,"bold"), fg="green", bg="black")
 entry = Entry(window, font=("Arial", 18), fg="black", bg="orange")
 entry2 = Entry(window, font=("Arial", 18), fg="black", bg="orange")
@@ -58,8 +59,6 @@ entry3 = Entry(window, font=("Arial", 18), fg="black", bg="orange")
 button = Button(window, text="New", font=("arial",10,"bold"), fg="white", bg="blue",command=save_data)
 button2 = Button(window, text="Append", font=("arial",10,"bold"), fg="white", bg="blue",command=apend_data)
 button3 = Button(window, text="Delete", font=("arial",10,"bold"), fg="white", bg="blue",command=delete_data)
-
-
 label.grid(row=1, column=0, sticky="w", padx=10, pady=10)
 label2.grid(row=2, column=0, sticky="w", padx=10, pady=10)
 label3.grid(row=3, column=0, sticky="w", padx=10, pady=10)
