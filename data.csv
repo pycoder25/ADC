@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Name,Lastname,City
 Nicholas,Johnson,New Hampshire
 Mary,Nephew,New York
@@ -13,3 +14,10 @@ Mike,Tyson,New York
 Mike,Tyson,New York
 Mike,Tyson,New York
 Myle,Nichols,New York
+=======
+Firstname,Lastname,City
+John,White,New York
+Mike,Ross,Manhattan
+Juan,Rike,Texas
+Donald,Trump,Washington
+>>>>>>> 54d2bb1f75ac0bd43a43a22af77f79a41362f2c4
