@@ -28,7 +28,6 @@ def apend_data():
     messagebox.showinfo("The file has been updated!")
    
     data.to_csv("data.csv", mode='a', index=False, header=False)
-print("The data has been updated!")
 
 def delete_data():
     entry.delete(0,END)
