@@ -41,20 +41,20 @@ def focus_next_entry(event):
 window = Tk()
 window.geometry("575x375")
 window.title("Personal Detail")
-window.config(background="black")
+window.config(background="skyblue")
 
 title = Label(window, text="Fill up the empty fields",
               font=("Arial", 25, "bold"),
-              fg="blue",
-              bg="black")
+              fg="orange",
+              bg="skyblue")
 
 
-label = Label(window, text="Firstname: ", font=("Arial", 18, "bold"), fg="green", bg="black")
-label2 = Label(window,text="Lastname: ", font=("Arial",18,"bold"),fg="green", bg="black")
-label3 = Label(window,text="State: ", font=("Arial",18,"bold"), fg="green", bg="black")
-entry = Entry(window, font=("Arial", 18), fg="black", bg="orange")
-entry2 = Entry(window, font=("Arial", 18), fg="black", bg="orange")
-entry3 = Entry(window, font=("Arial", 18), fg="black", bg="orange")
+label = Label(window, text="Firstname: ", font=("Arial", 18, "bold"), fg="green", bg="skyblue")
+label2 = Label(window,text="Lastname: ", font=("Arial",18,"bold"),fg="green", bg="skyblue")
+label3 = Label(window,text="State: ", font=("Arial",18,"bold"), fg="green", bg="skyblue")
+entry = Entry(window, font=("Arial", 18), fg="black", bg="white")
+entry2 = Entry(window, font=("Arial", 18), fg="black", bg="white")
+entry3 = Entry(window, font=("Arial", 18), fg="black", bg="white")
 button = Button(window, text="New", font=("arial",10,"bold"), fg="white", bg="blue",command=save_data)
 button2 = Button(window, text="Append", font=("arial",10,"bold"), fg="white", bg="blue",command=apend_data)
 button3 = Button(window, text="Delete", font=("arial",10,"bold"), fg="white", bg="blue",command=delete_data)
