@@ -38,14 +38,28 @@ window.geometry("575x375")
 window.title("Personal Detail")
 window.config(background="skyblue")
 
+<<<<<<< HEAD
+=======
+title = Label(window, text="Fill up the empty fields",
+              font=("Arial", 25, "bold"),
+              fg="orange",
+              bg="skyblue")
+
+
+>>>>>>> 5dae777baa8fae3d310f5e693fe4aeeed2e7b785
 label = Label(window, text="Firstname: ", font=("Arial", 18, "bold"), fg="green", bg="skyblue")
 label2 = Label(window,text="Lastname: ", font=("Arial",18,"bold"),fg="green", bg="skyblue")
 label3 = Label(window,text="State: ", font=("Arial",18,"bold"), fg="green", bg="skyblue")
 entry = Entry(window, font=("Arial", 18), fg="black", bg="white")
 entry2 = Entry(window, font=("Arial", 18), fg="black", bg="white")
 entry3 = Entry(window, font=("Arial", 18), fg="black", bg="white")
+<<<<<<< HEAD
 button = Button(window, text="New", font=("arial",10,"bold"), fg="white", bg="blue",command=new_file)
 button2 = Button(window, text="Update", font=("arial",10,"bold"), fg="white", bg="blue",command=apend_data)
+=======
+button = Button(window, text="New", font=("arial",10,"bold"), fg="white", bg="blue",command=save_data)
+button2 = Button(window, text="Append", font=("arial",10,"bold"), fg="white", bg="blue",command=apend_data)
+>>>>>>> 5dae777baa8fae3d310f5e693fe4aeeed2e7b785
 button3 = Button(window, text="Delete", font=("arial",10,"bold"), fg="white", bg="blue",command=delete_data)
 button4 = Button(window, text="Delete File", font=("Arial",10,"bold"), fg="white", bg="blue", command=delete_file)
 
