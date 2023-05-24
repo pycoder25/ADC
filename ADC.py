@@ -16,11 +16,11 @@ def apend_data():
     data = pd.DataFrame({"Firstname": [first_name],
                          "Lastname": [last_name],
                          "City": [city]})
+    
+    data.to_csv("data.csv", mode="a", index=False, header= False)
     messagebox.showinfo("The file has been updated!")
-   
-    data.to_csv("data.csv", mode='a', index=False, header=False)
 
-def delete_data():
+def clear():
     entry.delete(0,END)
     entry2.delete(0,END)
     entry3.delete(0,END)
@@ -54,7 +54,7 @@ entry2 = Entry(window, font=("Arial", 18), fg="black", bg="white")
 entry3 = Entry(window, font=("Arial", 18), fg="black", bg="white")
 button = Button(window, text="New", font=("arial",10,"bold"), fg="white", bg="blue",command=new_file)
 button2 = Button(window, text="Update", font=("arial",10,"bold"), fg="white", bg="blue",command=apend_data)
-button3 = Button(window, text="Delete", font=("arial",10,"bold"), fg="white", bg="blue",command=delete_data)
+button3 = Button(window, text="Clear", font=("arial",10,"bold"), fg="white", bg="blue",command=clear)
 button4 = Button(window, text="Delete File", font=("Arial",10,"bold"), fg="white", bg="blue", command=delete_file)
 
 label.grid(row=1, column=0, sticky="w", padx=10, pady=10)
