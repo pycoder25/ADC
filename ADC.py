@@ -6,7 +6,7 @@ import pandas as pd
 def new_file():
     a = open("data.csv", "x")
     a.close()
-    messagebox.showinfo("The file is created!")
+    messagebox.showinfo("showinfo","The file is created!")
 
 def apend_data():
     first_name = entry.get()
@@ -18,7 +18,7 @@ def apend_data():
                          "City": [city]})
     
     data.to_csv("data.csv", mode="a", index=False, header= False)
-    messagebox.showinfo("The file has been updated!")
+    messagebox.showinfo("showinfo","File is updated")
 
 def clear():
     entry.delete(0,END)
@@ -27,7 +27,7 @@ def clear():
 
 def delete_file():
     os.remove("data.csv")
-    messagebox.showinfo("The file has been deleted")
+    messagebox.showinfo("showinfo","The file has been deleted")
 
 def focus_next_entry(event):
     event.widget.tk_focusNext().focus()
@@ -36,6 +36,8 @@ def focus_next_entry(event):
 window = Tk()
 window.geometry("575x375")
 window.title("Personal Detail")
+icon = PhotoImage(file="C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python311\\PythonProjects\\app\\logo.png")
+window.iconphoto(True, icon)
 window.config(background="skyblue")
 
 
@@ -73,3 +75,4 @@ entry2.bind("<Return>", focus_next_entry)
 entry3.bind("<Return>", focus_next_entry)
 
 window.mainloop()
+
