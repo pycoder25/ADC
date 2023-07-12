@@ -41,7 +41,7 @@ def focus_next_entry(event):
 window = Tk()
 window.geometry("425x175")
 window.title("Automate Data Collector")
-icon = PhotoImage(file="C:\\Users\\123\\AppData\\Local\\Programs\\Python\\Python311\\PythonProjects\\ADC\\logo.png")
+icon = PhotoImage(file="logo.png")
 window.iconphoto(True, icon)
 window.config(background="skyblue")
 
