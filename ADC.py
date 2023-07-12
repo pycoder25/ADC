@@ -1,12 +1,17 @@
-import os
 from tkinter import *
 from tkinter import messagebox
+import os
 import pandas as pd
 
 def new_file():
-    a = open("data.csv", "x")
+    a = open("data.txt", "x")
     a.close()
-    messagebox.showinfo("showinfo","The file is created!")
+    
+    header = f'{"Firstname"},{"Lastname"},{"City"}\n'
+    aa = open("data.txt", "w")
+    aa.write(header)
+    aa.close()
+    messagebox.showinfo("showinfo","File is created")
 
 def apend_data():
     first_name = entry.get()
@@ -17,7 +22,7 @@ def apend_data():
                          "Lastname": [last_name],
                          "City": [city]})
     
-    data.to_csv("data.csv", mode="a", index=False, header= False)
+    data.to_csv("data.txt", mode="a", index=False, header= False)
     messagebox.showinfo("showinfo","File is updated")
 
 def clear():
@@ -26,7 +31,7 @@ def clear():
     entry3.delete(0,END)
 
 def delete_file():
-    os.remove("data.csv")
+    os.remove("data.txt")
     messagebox.showinfo("showinfo","The file has been deleted")
 
 def focus_next_entry(event):
@@ -34,45 +39,31 @@ def focus_next_entry(event):
     return "break"
 
 window = Tk()
-window.geometry("575x375")
-window.title("Personal Detail")
-icon = PhotoImage(file="C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python311\\PythonProjects\\app\\logo.png")
+window.geometry("425x175")
+window.title("Automate Data Collector")
+icon = PhotoImage(file="C:\\Users\\123\\AppData\\Local\\Programs\\Python\\Python311\\PythonProjects\\ADC\\logo.png")
 window.iconphoto(True, icon)
 window.config(background="skyblue")
 
+label = Label(window, text="Firstname: ", font=("Arial", 18, "bold"), fg="green", bg="skyblue").place(x=0,y=0)
+label2 = Label(window,text="Lastname: ", font=("Arial",18,"bold"),fg="green", bg="skyblue").place(x=0, y=35)
+label3 = Label(window,text="State: ", font=("Arial",18,"bold"), fg="green", bg="skyblue").place(x=0, y=75)
 
-title = Label(window, text="Fill up the empty fields",
-              font=("Arial", 25, "bold"),
-              fg="orange",
-              bg="skyblue")
-
-
-
-label = Label(window, text="Firstname: ", font=("Arial", 18, "bold"), fg="green", bg="skyblue")
-label2 = Label(window,text="Lastname: ", font=("Arial",18,"bold"),fg="green", bg="skyblue")
-label3 = Label(window,text="State: ", font=("Arial",18,"bold"), fg="green", bg="skyblue")
 entry = Entry(window, font=("Arial", 18), fg="black", bg="white")
 entry2 = Entry(window, font=("Arial", 18), fg="black", bg="white")
 entry3 = Entry(window, font=("Arial", 18), fg="black", bg="white")
-button = Button(window, text="New", font=("arial",10,"bold"), fg="white", bg="blue",command=new_file)
-button2 = Button(window, text="Update", font=("arial",10,"bold"), fg="white", bg="blue",command=apend_data)
-button3 = Button(window, text="Clear", font=("arial",10,"bold"), fg="white", bg="blue",command=clear)
-button4 = Button(window, text="Delete File", font=("Arial",10,"bold"), fg="white", bg="blue", command=delete_file)
 
-label.grid(row=1, column=0, sticky="w", padx=10, pady=10)
-label2.grid(row=2, column=0, sticky="w", padx=10, pady=10)
-label3.grid(row=3, column=0, sticky="w", padx=10, pady=10)
-entry.grid(row=1, column=1, sticky="w", padx=10, pady=10)
-entry2.grid(row=2, column=1, sticky="w", padx=10, pady=10)
-entry3.grid(row=3, column=1, sticky="w", padx=10, pady=10)
-button.grid(row=4, column=1, sticky=W, padx=5, pady=5)
-button2.grid(row=5, column=1, sticky=W, padx=5, pady=5)
-button3.grid(row=6, column=1, sticky=W, padx=5, pady=5)
-button4.grid(row=7, column=1, sticky=W, padx=5, pady=5)
+entry.place(x=140, y=5)
+entry2.place(x=140, y=40)
+entry3.place(x=140, y=75)
+
+button = Button(window, text="New", font=("arial",10,"bold"), fg="white", bg="blue", command=new_file).place(x=75, y=120)
+button2 = Button(window, text="Update", font=("arial",10,"bold"), fg="white", bg="blue", command=apend_data).place(x=120, y=120)
+button3 = Button(window, text="Clear", font=("arial",10,"bold"), fg="white", bg="blue", command=clear).place(x=183, y=120)
+button4 = Button(window, text="Delete File", font=("Arial",10,"bold"), fg="white", bg="blue", command=delete_file).place(x=235, y=120)
 
 entry.bind("<Return>", focus_next_entry)
 entry2.bind("<Return>", focus_next_entry)
 entry3.bind("<Return>", focus_next_entry)
 
 window.mainloop()
-
